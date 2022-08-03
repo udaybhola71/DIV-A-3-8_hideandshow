@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jquery hide and show</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+     <style>
+        #container{
+            height: 300px;
+            width: 300px;
+            background-color: rgb(248, 172, 8);
+            margin:auto;
+            border-radius: 50px;
+        }
+        #hide{
+            margin-left:590px ;
+            margin-top: 20px;
+            background-color:rgba(174, 245, 10, 0.411);
+        }
+        #show{
+            margin-left:10px;
+            background-color:rgba(9, 141, 230, 0.411);
+        }
+        #toggle{
+            margin-left:10px;
+            background-color:rgba(194, 26, 129, 0.411);
+        }
+        #hide2{
+            margin-left:590px ;
+            margin-top: 20px;
+           
+        }
+        #show2{
+            margin-left:10px;
+            
+        }
+        #increase{
+            margin-left:590px ;
+            margin-top: 20px;
+            background-color:rgba(85, 57, 245, 0.411);
+        }
+        #decrease{
+            margin-left:10px;
+            background-color:rgba(77, 136, 9, 0.411);
+        }
+        
+     </style>
+</head>
+<body>
+    <div id="container"></div>
+    <button id="hide">Hide</button>
+    <button id="show">show</button>
+    <button id="toggle">toggle</button><br/>
+    <button id="hide2">Hide</button>
+    <button id="show2">show</button><br/>
+    <button id="increase">+</button>
+    <button id="decrease">-</button>
+
+
+    <script>
+    $(document).ready(function(){
+  $("#hide").click(function(){
+    $("div").hide()
+  })
+  $("#show").click(function(){
+    $("div").show()
+  })
+  $("#toggle").click(function(){
+    $("div").toggle()
+  })
+  $("#hide2").click(function(){
+    $("div").hide()
+    $("#hide2").attr("disabled",true)
+    $("#show2").attr("disabled",false)
+  })
+  $("#show2").click(function(){
+    $("div").show()
+    $("#show2").attr("disabled",true)
+    $("#hide2").attr("disabled",false)
+  })
+  $("#increase").click(function(){
+    $("div").animate({
+      height: '400px',
+      width: '400px'
+    })
+  })
+  $("#decrease").click(function(){
+    $("div").animate({
+      height: '250px',
+      width: '250px'
+    })
+  })
+    })
+
+
+    </script>
+</body>
+</html>
